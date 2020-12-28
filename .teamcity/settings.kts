@@ -33,6 +33,8 @@ project {
 object Build : BuildType({
     name = "Build"
 
+    artifactRules = "%teamcity.build.checkoutDir%/sampletext.txt=>sampletext.txt"
+
     vcs {
         root(DslContext.settingsRoot)
     }
