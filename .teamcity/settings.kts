@@ -43,7 +43,7 @@ object Build : BuildType({
 
     steps {
         script {
-            scriptContent = """echo "hello kotlin" >sampletext.txt"""
+            scriptContent = ""echo "hello" >sampletext.txt""
         }
         script {
             name = "excecute .py"
