@@ -47,7 +47,7 @@ object Build : BuildType({
         }
         script {
             name = "excecute .py"
-            scriptContent = "cd /samplehello python helloworld.py"
+            scriptContent = "python helloworld.py"
         }
     }
 
