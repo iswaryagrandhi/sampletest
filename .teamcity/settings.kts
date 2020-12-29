@@ -45,6 +45,10 @@ object Build : BuildType({
         script {
             scriptContent = """echo "hello kotlin" >sampletext.txt"""
         }
+        script {
+            name = "excecute .py"
+            scriptContent = "cd /samplehello python helloworld.py"
+        }
     }
 
     triggers {
