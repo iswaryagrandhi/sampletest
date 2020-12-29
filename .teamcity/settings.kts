@@ -35,6 +35,7 @@ object Build : BuildType({
     name = "Build"
 
     artifactRules = "%teamcity.build.checkoutDir%/sampletext.txt=>sampletext.txt"
+    publishArtifacts = PublishMode.ALWAYS
 
     vcs {
         root(DslContext.settingsRoot)
