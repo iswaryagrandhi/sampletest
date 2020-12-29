@@ -47,19 +47,19 @@ object Build : BuildType({
         }
         script {
             name = "excecute .py"
-            scriptContent = "python helloworld.py"
+            scriptContent = "cd /samplehello python helloworld.py"
         }
     }
 
     triggers {
         vcs {
+
             quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_CUSTOM
             quietPeriod = 40
             branchFilter = ""
             perCheckinTriggering = true
             groupCheckinsByCommitter = true
             enableQueueOptimization = false
-
 
         }
     }
