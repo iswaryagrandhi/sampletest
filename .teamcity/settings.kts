@@ -47,7 +47,10 @@ object Build : BuildType({
         }
         script {
             name = "excecute .py"
-            scriptContent = "cd /samplehello python helloworld.py"
+            scriptContent = """
+                pwd
+                cd /samplehello python helloworld.py
+            """.trimIndent()
         }
     }
 
