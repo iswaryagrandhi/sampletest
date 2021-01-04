@@ -31,7 +31,6 @@ changeBuildType(RelativeId("Build")) {
             }
         }
         update<ScriptBuildStep>(1) {
-            enabled = false
             clearConditions()
         }
         items.removeAt(2)
