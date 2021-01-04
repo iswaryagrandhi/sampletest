@@ -49,6 +49,15 @@ object Build : BuildType({
     }
 
     triggers {
+       vcs {
+            quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_CUSTOM
+            quietPeriod = 10
+            branchFilter = ""
+            perCheckinTriggering = true
+            enableQueueOptimization = false
+             }
+
+
 
     }
 })
