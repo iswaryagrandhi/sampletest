@@ -48,7 +48,7 @@ object Build : BuildType({
         }
 
         maven {
-            goals = "clean pakage"
+            goals = "clean package"
             pomLocation = ".teamcity/pom.xml"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
     }
