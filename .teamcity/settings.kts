@@ -44,12 +44,14 @@ object Build : BuildType({
 
     steps {
         script {
-            scriptContent = """echo "helloworld" >sampletext.txt"""
+            scriptContent = """echo "hello" >sampletext.txt"""
         }
-        script {
-                name = "test2"
-                scriptContent = """echo "test2""""
-        }
+
+        maven {
+            goals = "clean pakage"
+            pomLocation = ".teamcity/pom.xml"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+    }
     }
 
     triggers {
