@@ -47,11 +47,6 @@ object Build : BuildType({
             scriptContent = """echo "hello" >sampletext.txt"""
         }
 
-        maven {
-            goals = "clean test"
-            pomLocation = ".teamcity/pom.xml"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
-    }
     }
 
     triggers {
