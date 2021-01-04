@@ -22,24 +22,16 @@ changeBuildType(RelativeId("Build")) {
         }
     }
     steps {
-        insert(0) {
-            maven {
-                goals = "clean test"
-                pomLocation = "helloworld/pom.xml"
-                runnerArgs = "-Dmaven.test.failure.ignore=true"
-                jdkHome = "%env.JDK_1_8%"
-            }
-        }
-        update<ScriptBuildStep>(1) {
+        update<ScriptBuildStep>(0) {
             clearConditions()
         }
-        insert(2) {
+        insert(1) {
             maven {
                 goals = "clean test"
                 pomLocation = ".teamcity/pom.xml"
                 runnerArgs = "-Dmaven.test.failure.ignore=true"
             }
         }
-        items.removeAt(3)
+        items.removeAt(2)
     }
 }
