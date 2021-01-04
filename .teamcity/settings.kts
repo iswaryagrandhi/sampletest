@@ -41,6 +41,14 @@ object Build : BuildType({
         root(DslContext.settingsRoot)
     }
 
+    features {
+      freeDiskSpace {
+            requiredSpace = "1gb"
+            failBuild = false
+        }
+
+    }
+
     steps {
         script {
             scriptContent = """echo "helloworld" >sampletext.txt"""
@@ -49,13 +57,7 @@ object Build : BuildType({
     }
 
     triggers {
-       vcs {
-            quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_CUSTOM
-            quietPeriod = 10
-            branchFilter = ""
-            perCheckinTriggering = true
-            enableQueueOptimization = false
-             }
+
 
 
 
