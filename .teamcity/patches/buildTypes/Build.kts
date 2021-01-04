@@ -26,7 +26,7 @@ changeBuildType(RelativeId("Build")) {
         }
     }
     steps {
-        insert(1) {
+        insert(0) {
             maven {
                 goals = "clean test"
                 pomLocation = "helloworld/pom.xml"
