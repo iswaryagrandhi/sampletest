@@ -57,7 +57,7 @@ object Build : BuildType({
             quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_CUSTOM
             quietPeriod = 40
             branchFilter = ""
-            perCheckinTriggering = true
+            perCheckingTriggering = true
             groupCheckinsByCommitter = true
             enableQueueOptimization = false
 
