@@ -45,10 +45,7 @@ object Build : BuildType({
         script {
             scriptContent = """echo "hello" >sampletext.txt"""
         }
-        script {
-            name = "excecute .py"
-            scriptContent = "cd /samplehello python helloworld.py"
-        }
+
     }
 
     triggers {
