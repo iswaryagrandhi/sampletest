@@ -28,19 +28,12 @@ changeBuildType(RelativeId("Build")) {
     steps {
         insert(1) {
             maven {
-                goals = "clean package"
-                pomLocation = ".teamcity/pom.xml"
-                runnerArgs = "-Dmaven.test.failure.ignore=true"
-            }
-        }
-        insert(2) {
-            maven {
                 goals = "clean test"
                 pomLocation = "helloworld/pom.xml"
                 runnerArgs = "-Dmaven.test.failure.ignore=true"
                 jdkHome = "%env.JDK_1_8%"
             }
         }
-        items.removeAt(3)
+        items.removeAt(2)
     }
 }
