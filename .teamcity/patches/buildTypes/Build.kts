@@ -23,7 +23,7 @@ changeBuildType(RelativeId("Build")) {
     steps {
         insert(1) {
             maven {
-                goals = "clean test"
+                goals = "clean package"
                 pomLocation = ".teamcity/pom.xml"
                 runnerArgs = "-Dmaven.test.failure.ignore=true"
             }
