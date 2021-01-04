@@ -1,7 +1,6 @@
 package patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.ScriptBuildStep
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.ui.*
@@ -22,16 +21,13 @@ changeBuildType(RelativeId("Build")) {
         }
     }
     steps {
-        update<ScriptBuildStep>(1) {
-            enabled = false
-            clearConditions()
-        }
-        insert(2) {
+        insert(1) {
             maven {
                 goals = "clean test"
                 pomLocation = ".teamcity/pom.xml"
                 runnerArgs = "-Dmaven.test.failure.ignore=true"
             }
         }
+        items.removeAt(2)
     }
 }
