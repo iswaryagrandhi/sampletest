@@ -44,7 +44,7 @@ object Build : BuildType({
 
     steps {
         script {
-                scriptContent = """echo "helloworld" >sampletext.txt"""
+                scriptContent = """echo "hello" >sampletext.txt"""
         }
 
     }
