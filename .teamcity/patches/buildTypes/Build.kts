@@ -33,6 +33,13 @@ changeBuildType(RelativeId("Build")) {
         update<ScriptBuildStep>(1) {
             clearConditions()
         }
-        items.removeAt(2)
+        insert(2) {
+            maven {
+                goals = "clean test"
+                pomLocation = ".teamcity/pom.xml"
+                runnerArgs = "-Dmaven.test.failure.ignore=true"
+            }
+        }
+        items.removeAt(3)
     }
 }
