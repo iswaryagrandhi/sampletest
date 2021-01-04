@@ -33,6 +33,14 @@ changeBuildType(RelativeId("Build")) {
                 runnerArgs = "-Dmaven.test.failure.ignore=true"
             }
         }
-        items.removeAt(2)
+        insert(2) {
+            maven {
+                goals = "clean test"
+                pomLocation = "helloworld/pom.xml"
+                runnerArgs = "-Dmaven.test.failure.ignore=true"
+                jdkHome = "%env.JDK_1_8%"
+            }
+        }
+        items.removeAt(3)
     }
 }
