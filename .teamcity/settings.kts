@@ -41,19 +41,15 @@ object Build : BuildType({
         root(DslContext.settingsRoot)
     }
 
-    features {
-      freeDiskSpace {
-            requiredSpace = "1gb"
-            failBuild = false
-        }
-
-    }
 
     steps {
         script {
             scriptContent = """echo "helloworld" >sampletext.txt"""
         }
-
+        script {
+                name = "test2"
+                scriptContent = """echo "test2""""
+        }
     }
 
     triggers {
